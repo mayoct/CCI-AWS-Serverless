@@ -5,7 +5,9 @@
 	"dockerFile": "Dockerfile",
 
 	"runArgs": ["--init", "--privileged",
-		"--env-file=.env"],
+		"--env=AWS_ACCESS_KEY_ID",
+		"--env=AWS_SECRET_ACCESS_KEY",
+		"--env=AWS_DEFAULT_REGION"],
 	"mounts": ["source=dind-var-lib-docker,target=/var/lib/docker,type=volume"],
 	"overrideCommand": false,
 	
