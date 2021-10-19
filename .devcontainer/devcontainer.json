@@ -3,7 +3,9 @@
 {
 	"name": "Docker in Docker",
 	"dockerFile": "Dockerfile",
-	"runArgs": ["--init", "--privileged"],
+
+	"runArgs": ["--init", "--privileged",
+		"--env-file=.env"],
 	"mounts": ["source=dind-var-lib-docker,target=/var/lib/docker,type=volume"],
 	"overrideCommand": false,
 	
@@ -11,7 +13,8 @@
 	"settings": {},
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
-		"ms-azuretools.vscode-docker"
+		"ms-azuretools.vscode-docker",
+		"AmazonWebServices.aws-toolkit-vscode"
 	],
 	
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
